@@ -189,10 +189,10 @@ data_list <- list(
 model <- jags.model(textConnection(model_string), data = data_list, n.chains = 3)
 
 # Update the model (burn-in)
-update(model, n.iter = 14000)
+update(model, n.iter = 11000)
 
 # Sample from the posterior
-samples <- coda.samples(model, variable.names = c("alpha", "beta", "gamma", "sigma"), n.iter = 14000)
+samples <- coda.samples(model, variable.names = c("alpha", "beta", "gamma", "sigma"), n.iter = 11000)
 
 # Plot the fit --> these plots are pretty easy to interpret, i can help if needed
 plot(samples)
